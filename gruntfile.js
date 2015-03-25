@@ -4,7 +4,7 @@ module.exports = function(grunt){
 		less:{
 			compile:{
 				files:{
-					'css/site.css' : 'less/site.less'
+					'dist/css/site.css' : 'less/site.less'
 				}
 			}
 		},
@@ -16,20 +16,17 @@ module.exports = function(grunt){
 			// the files to concatenate
 			src: ['scripts/*.js'],
 			// the location of the resulting JS file
-			dest: 'js/site.js'
+			dest: 'dist/js/site.js'
 		  }
 		},
 		uglify: {
 		  
 		  dist: {
 			files: {
-			  'js/site.min.js': ['<%= concat.dist.dest %>']
+			  'dist/js/site.min.js': ['<%= concat.dist.dest %>']
 			}
 		  }
 		}
-		
-		
-
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-less');
